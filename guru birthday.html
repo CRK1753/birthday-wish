@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Guru Dharshini 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to top right, #ffdada, #ffeaea);
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    audio {
+      display: none;
+    }
+
+    .glow-name {
+      text-align: center;
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.8rem;
+      color: #fff;
+      margin-top: 40px;
+      animation: glow 2s ease-in-out infinite alternate, bounce 2s infinite;
+      position: relative;
+    }
+
+    @keyframes glow {
+      0% { text-shadow: 0 0 10px #ff4da6, 0 0 20px #ff4da6; }
+      100% { text-shadow: 0 0 25px #ff4da6, 0 0 50px #ff4da6; }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px 20px;
+      gap: 40px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+
+    .photo-box img {
+      width: 200px;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      transition: transform 0.4s ease;
+    }
+
+    .photo-box img:hover {
+      transform: scale(1.05);
+    }
+
+    .message-box {
+      max-width: 500px;
+      background: rgba(243, 1, 191, 0.1);
+      padding: 30px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      text-align: center;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      animation: fadeIn 2s ease forwards;
+      opacity: 0;
+    }
+
+    .message-box h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .message-box h3 {
+      font-weight: 300;
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .falling {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      z-index: 0;
+      animation: fall linear infinite;
+      pointer-events: none;
+    }
+
+    .petal {
+      background: radial-gradient(circle at center, pink 40%, #fff 80%);
+      border-radius: 50% 50% 50% 0;
+      transform: rotate(45deg);
+    }
+
+    .heart {
+      background-color: red;
+      transform: rotate(45deg);
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* 🎊 Popup Wish */
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(255, 220, 230, 0.95);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 9999;
+      animation: fadeInPopup 1s ease;
+      cursor: pointer;
+    }
+
+    @keyframes fadeInPopup {
+      0% { opacity: 0; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    .popup h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.5rem;
+      color: #e60073;
+      text-shadow: 0 0 15px #ff8eb0;
+      animation: glow 1.5s infinite alternate;
+      margin-bottom: 10px;
+    }
+
+    .popup p {
+      font-size: 1.3rem;
+      color: #ff2a68;
+    }
+
+    .emoji {
+      font-size: 2rem;
+      animation: bounce 1s infinite;
+      margin-top: 10px;
+    }
+
+    .popper {
+      position: absolute;
+      font-size: 2.5rem;
+      animation: burst 1s ease-out forwards;
+      pointer-events: none;
+    }
+
+    @keyframes burst {
+      0% { transform: scale(0); opacity: 1; }
+      100% { transform: scale(2); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🎵 Background Music -->
+  <audio autoplay loop>
+    <source src="remo_movie_love_bgm">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- 🎊 Popup -->
+  <div class="popup" id="popup">
+    <h1>🎉 Happy Birthday Guru Dharshini 💖</h1>
+    <div class="emoji">💝🎊🎂💃✨</div>
+  </div>
+
+  <!-- 💖 Name Glow -->
+  <div class="glow-name">To My Gem <br> Guru Dharshini 💕<br></div>
+
+  <!-- 📸 Photos + Message -->
+  <div class="wrapper">
+    <div class="photo-box">
+      <img src="image2">
+    </div>
+
+    <div class="message-box">
+      <h1>Happy Birthday, Pondatti!</h1>
+      You're always in my mind, forever a part of my conscience.
+Every single day, thoughts of you light up my heart — I never go to sleep without thinking of you first. 
+      Today is your day.
+      <br><br>
+      Forever yours,  
+      <br>Mama
+    </div>
+
+    <div class="photo-box">
+      <img src="image3">
+    </div>
+  </div>
+
+  <!-- 🌸 Continuous Falling Hearts & Petals -->
+  <script>
+    function createFallingElement(type) {
+      const el = document.createElement("div");
+      el.classList.add("falling", type);
+      el.style.left = Math.random() * 100 + "vw";
+      el.style.animationDuration = 4 + Math.random() * 4 + "s";
+      el.style.opacity = Math.random();
+      el.style.width = el.style.height = 10 + Math.random() * 20 + "px";
+      document.body.appendChild(el);
+      setTimeout(() => el.remove(), 8000);
+    }
+
+    setInterval(() => {
+      createFallingElement(Math.random() > 0.5 ? "petal" : "heart");
+    }, 250);
+  </script>
+
+  <!-- 🎊 Popup Logic + Confetti -->
+  <script>
+    const popup = document.getElementById("popup");
+
+    function createPopper() {
+      const emoji = ["🎉", "🎊", "✨", "💖", "💘"];
+      const el = document.createElement("div");
+      el.className = "popper";
+      el.style.left = Math.random() * window.innerWidth + "px";
+      el.style.top = Math.random() * window.innerHeight + "px";
+      el.textContent = emoji[Math.floor(Math.random() * emoji.length)];
+      document.body.appendChild(el);
+      setTimeout(() => el.remove(), 1000);
+    }
+
+    function closePopup() {
+      popup.style.display = "none";
+    }
+
+    // Auto-close popup after 3 seconds
+    setTimeout(() => {
+      closePopup();
+    }, 5000);
+
+    // Allow touch/click to close early
+    popup.addEventListener("click", closePopup);
+    popup.addEventListener("touchstart", closePopup);
+
+    // Paper popper burst for 3 seconds
+    let popperInterval = setInterval(createPopper, 150);
+    setTimeout(() => clearInterval(popperInterval), 100000);
+  </script>
+
+</body>
+</html>
